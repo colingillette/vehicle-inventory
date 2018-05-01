@@ -12,9 +12,66 @@ namespace VehicleInventorySystem
 {
     public partial class Form1 : Form
     {
+        List<Vehicle> vehicles = new List<Vehicle>();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                int id;
+                string display = "Vehcile Added: ";
+
+                mileageTextBox.Clear();
+
+                id = (vehicles.Count + 1);
+
+                Vehicle v = new Vehicle(id, yearTextBox.Text, makeTextBox.Text, modelTextBox.Text, vinTextBox.Text);
+
+                vehicles.Add(v);
+
+                display += v.ShowInfo();
+
+                MessageBox.Show(display);
+            }
+            else
+            {
+                int id, mileage;
+                string display = "Vehcile Added: ";
+
+                id = (vehicles.Count + 1);
+                int.TryParse(mileageTextBox.Text, out mileage);
+
+                Vehicle v = new Vehicle(id, yearTextBox.Text, makeTextBox.Text, modelTextBox.Text, vinTextBox.Text, mileage);
+
+                vehicles.Add(v);
+
+                display += v.ShowInfo();
+
+                MessageBox.Show(display);
+            }
+
+            yearTextBox.Clear();
+            makeTextBox.Clear();
+            modelTextBox.Clear();
+            mileageTextBox.Clear();
+            vinTextBox.Clear();
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            string display = $"Our inventory has the following vehicles:\n";
+
+            for (int i = 0; i < vehicles.Count(); i++)
+            {
+                display += $"{vehicles[i].ShowInfo()}\n";
+            }
+
+            MessageBox.Show(display);
         }
     }
 }

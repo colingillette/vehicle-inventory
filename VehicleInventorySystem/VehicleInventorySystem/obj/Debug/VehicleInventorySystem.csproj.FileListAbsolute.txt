@@ -1,0 +1,10 @@
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\bin\Debug\VehicleInventorySystem.exe.config
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\bin\Debug\VehicleInventorySystem.exe
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\bin\Debug\VehicleInventorySystem.pdb
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.csprojResolveAssemblyReference.cache
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.Form1.resources
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.Properties.Resources.resources
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.csproj.GenerateResource.cache
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.csproj.CoreCompileInputs.cache
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.exe
+C:\Users\mrg_3\Desktop\vehicle-inventory\VehicleInventorySystem\VehicleInventorySystem\obj\Debug\VehicleInventorySystem.pdb
