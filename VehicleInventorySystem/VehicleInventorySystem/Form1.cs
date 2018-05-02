@@ -19,6 +19,40 @@ namespace VehicleInventorySystem
             InitializeComponent();
         }
 
+        private int indexDelete(string year, string make, string model, string vin)
+        {
+            int index = -1;
+
+            for (int i = 0; i < vehicles.Count(); i++)
+            {
+                if (year == vehicles[i].Year && make == vehicles[i].Make && model == vehicles[i].Model && vin == vehicles[i].Vin)
+                {
+                    i = index;
+                }
+            }
+
+            return index;
+        }
+
+        private void fixList(int index)
+        {
+            if (index != -1)
+            {
+                vehicles.Remove(vehicles[index]);
+
+                for (int i = 0; i < vehicles.Count; i++)
+                {
+                    vehicles[i].Id = (i + 1);
+                }
+
+                MessageBox.Show("Sucessfully deleted.");
+            }
+            else
+            {
+                MessageBox.Show("Cannot find a vehicle taht matches your criteria to delete.");
+            }
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -72,6 +106,21 @@ namespace VehicleInventorySystem
             }
 
             MessageBox.Show(display);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            string year, make, model, vin;
+            int index;
+
+            year = yearTextBox.Text;
+            make = makeTextBox.Text;
+            model = modelTextBox.Text;
+            vin = vinTextBox.Text;
+
+            //TODO: UnBreak
+            index = indexDelete(year, make, model, vin);
+            fixList(index);
         }
     }
 }
