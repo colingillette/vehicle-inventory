@@ -19,37 +19,30 @@ namespace VehicleInventorySystem
             InitializeComponent();
         }
 
-        private int indexDelete(string year, string make, string model, string vin)
+        private void deleteVehicle(string year, string make, string model, string vin)
         {
             int index = -1;
 
-            for (int i = 0; i < vehicles.Count(); i++)
+            foreach (Vehicle v in vehicles)
             {
-                if (year == vehicles[i].Year && make == vehicles[i].Make && model == vehicles[i].Model && vin == vehicles[i].Vin)
+                if (v.Year == year && v.Make == make && v.Model == model && v.Vin == vin)
                 {
-                    i = index;
+                    index = (v.Id - 1);
                 }
             }
 
-            return index;
-        }
-
-        private void fixList(int index)
-        {
             if (index != -1)
             {
-                vehicles.Remove(vehicles[index]);
-
-                for (int i = 0; i < vehicles.Count; i++)
-                {
-                    vehicles[i].Id = (i + 1);
-                }
-
-                MessageBox.Show("Sucessfully deleted.");
+                vehicles.RemoveAt(index);
             }
-            else
+
+            int i = 1;
+
+            foreach (Vehicle v in vehicles)
             {
-                MessageBox.Show("Cannot find a vehicle taht matches your criteria to delete.");
+                v.Id = i;
+                i++;
+                MessageBox.Show(v.ShowInfo());
             }
         }
 
@@ -111,16 +104,13 @@ namespace VehicleInventorySystem
         private void deleteButton_Click(object sender, EventArgs e)
         {
             string year, make, model, vin;
-            int index;
 
             year = yearTextBox.Text;
             make = makeTextBox.Text;
             model = modelTextBox.Text;
             vin = vinTextBox.Text;
 
-            //TODO: UnBreak
-            index = indexDelete(year, make, model, vin);
-            fixList(index);
+            deleteVehicle(year, make, model, vin);
         }
     }
 }
