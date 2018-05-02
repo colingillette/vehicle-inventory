@@ -201,7 +201,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "8";
+            this.Text = "Vehicle Inventory";
             this.ResumeLayout(false);
             this.PerformLayout();
 
