@@ -34,6 +34,7 @@ namespace VehicleInventorySystem
             if (index != -1)
             {
                 vehicles.RemoveAt(index);
+                MessageBox.Show("Vehicle deleted.");
             }
 
             int i = 1;
@@ -42,7 +43,6 @@ namespace VehicleInventorySystem
             {
                 v.Id = i;
                 i++;
-                MessageBox.Show(v.ShowInfo());
             }
         }
 
@@ -111,6 +111,14 @@ namespace VehicleInventorySystem
             vin = vinTextBox.Text;
 
             deleteVehicle(year, make, model, vin);
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i <= vehicles.Count; i++)
+            {
+                vehicles.RemoveAt(i);
+            }
         }
     }
 }
